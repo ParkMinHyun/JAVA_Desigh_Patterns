@@ -869,30 +869,24 @@ public class PasteCommand extends AbstractCommand {
 
 ( 2-2 ) PasteActionListener - 복사 기능의 Listener
 
-```
-public class PasteActionListener implements ActionListener {
-
-    public void actionPerformed(ActionEvent e) {
-        // 현재 document와 position을 구한다.
-        .....
-        new PasteCommand(document, position); // 명령어 객체 생성
+    public class PasteActionListener implements ActionListener {
+    
+        public void actionPerformed(ActionEvent e) {
+            // 현재 document와 position을 구한다.
+            .....
+            new PasteCommand(document, position); // 명령어 객체 생성
+        }
     }
-}
-```
 
 (2-3) Menu Class 
 
 - 사용자들이 메뉴에서 "붙여넣기"를 클릭하면 actionPerformed() Method 호출되고 PasteCommand 객체 생성이 됨.
 - 실제 사용자의 입력을 받는 MenuItem 객체와 실제 내부적으로 "붙여넣기"를 처리하는 PasteCommand 객체와 상관이 없다는 것을 알 수 있다.
 
-```
-Menu menu = new Menu ("편집");
-MenuItem pasteMenuItem = new MenuItem("붙여넣기");
-menu.add(pasteMenuItem);
-pasteMenuItem.addActionListener(new PasteActionListener());
-```
-
-
+    Menu menu = new Menu ("편집");
+    MenuItem pasteMenuItem = new MenuItem("붙여넣기");
+    menu.add(pasteMenuItem);
+    pasteMenuItem.addActionListener(new PasteActionListener());
 
 ( 3-1 ) CommandManager Class
 
