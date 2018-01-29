@@ -1,5 +1,3 @@
-# JAVA_Desigh_Patterns
-
 # Android & JAVA Design Pattern
 
 ### (1) Strategy (2) Observer (3) Facade (4) Builder (5) Command
